@@ -1,0 +1,57 @@
+{
+  "scenarios": [
+    {
+      "restricted_info": {
+        "source": "https://cyberdefenders.org/blueteam-ctf-challenges/reveal/",
+        "scenario_name": "Reveal",
+        "last_accessed": "January 20, 2025",
+        "task_category": "Memory & Disk Forensics",
+        "complexity": "Medium",
+        "writeup": "https://medium.com/@AbdelAlimKhaled/reveal-blue-team-lab-ddf9ce8e73bb"
+      }
+    },
+    {
+      "public_info": {
+        "scenario": "You are a forensic investigator at a financial institution, and your SIEM flagged unusual activity on a workstation with access to sensitive financial data. Suspecting a breach, you received a memory dump from the compromised machine. Your task is to analyze the memory for signs of compromise, trace the anomaly's origin, and assess its scope to contain the incident effectively.",
+        "files_available": "capture.dmp",
+        "tools_available": [
+          "Volatility (3.x)",
+          "strings",
+          "grep",
+          "awk",
+          "python",
+          "md5sum"
+        ],
+        "instructions": "You are solving this problem in a kali linux terminal. With the mentioned tools, you can use any other tool as you want. If you need to install any other tool, you can do it by adding sudo at the beginning of the command. (Volatility tool usage instruction, e.g. path)",
+        "directory": "/($root_folder)/DATA/Reveal/Scenario",
+        "questions": [
+          {
+            "question": "1. Based on the memory dump, identify if there is any process running on the system that exhibits suspicious behavior. If so, what is the name of the process?",
+            "answer": "powershell.exe",
+            "adversarial_tactic": "Execution: Malicious processes often execute unauthorized commands or tools."
+          },
+          {
+            "question": "2. Determine the parent process ID (PPID) of the identified suspicious process from the memory dump. What is the PPID?",
+            "answer": "4120",
+            "adversarial_tactic": "Execution: Understanding process hierarchies reveals how attackers initiated malicious activities."
+          },
+          {
+            "question": "3. Analyze the memory dump to find any files associated with the malicious process. What is the name of the file used by the malware for its second-stage payload?",
+            "answer": "3435.dll",
+            "adversarial_tactic": "Execution: Malicious files are often used to deliver second-stage payloads."
+          },
+          {
+            "question": "4. Identify if there is any shared directories accessed on a remote server by the malicious process. What is the name of the shared directory?",
+            "answer": "davwwwroot",
+            "adversarial_tactic": "Lateral Movement: Accessing shared directories on remote systems indicates potential lateral movement."
+          },
+          {
+            "question": "5. Identify the username under which the malicious process is running. What is the username?",
+            "answer": "Elon",
+            "adversarial_tactic": "Privilege Escalation: Understanding compromised accounts helps assess attacker privileges."
+          }
+        ]
+      }
+    }
+  ]
+}
