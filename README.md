@@ -3,20 +3,34 @@ This is a dataset about Security Incident Analysis Tasks. This repository contai
 
 # Dataset Structure
 
-Each scenario is structured with the following fields:
+Restricted Information: These fields contain metadata that may not be publicly available but are essential for tracking and referencing the scenario.
 
-1. Scenario Name: A unique identifier for the security incident.
+Source: A URL pointing to the original reference where the scenario was sourced from.
 
-2. Task Category: The primary investigative focus, such as Network Forensics, Incident Response, Threat Hunting, etc.
+Scenario Name: A unique identifier for the security scenario.
 
-3. Complexity: The difficulty level of the scenario (e.g.,Easy, Medium, Hard).
+Last accessed: The last date when the scenario was accessed or updated.
 
-4. Scenario Description: A brief background of the incident and the objectives for the analyst.
+Task Category: Defines the primary focus of the challenge, such as "Malware Analysis," "Network Forensics" etc.
 
-5. Tools Available: A list of built-in tools that can be used for analysis, including tshark, pdfparser, volatility, python, grep, strings, md5sum, and more.
+Complexity: The difficulty level of the scenario, such as "Easy," "Medium," or "Hard."
 
-6. Files Available: Evidence files provided for analysis, such as .pcap, .mem, logs, or scripts.
+Writeup: A URL leading to a solution guide or writeup for the challenge.
 
-7. Instructions: Some Guidelines for using tools, often within a Kali Linux terminal.
+Public Information: These fields describe the scenario that security analysts/LLM will use and investigate.
 
-8. Questions & Answers: A set of investigative questions designed to guide the analysis, along with correct answers and corresponding adversarial tactics from the MITRE ATT&CK framework.
+Scenario: A brief background of the incident and the objectives for the analyst.
+
+Files available: The evidence file(s) provided for analysis. 
+
+Tools available: A list of built-in suggested tools that can be used for analysis, including tshark, pdfparser, volatility, python, md5sum, and more.
+
+Instructions: Some Guidelines for using tools, often within a Kali Linux terminal.
+
+Directory: The file path where the scenario data is stored on the system.
+
+Questions: A list of specific key investigative questions analysts must answer by examining the provided files.
+
+Answer: The answer for the investigative questions.
+
+Adversarial Tactic: The MITRE ATT&CK framework tactic associated with the investigative question.
