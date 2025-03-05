@@ -1,6 +1,6 @@
 **# SIA_Dataset**
 
-This is a dataset about Security Incident Analysis Tasks. This repository contains different type of tasks such as Network Forensics, Disk & Memory Forensics, Malware Analysis and Others.
+This is a dataset about Security Incident Analysis Tasks. This repository contains different type of tasks such as Network Forensics, Disk & Memory Forensics, Malware Analysis and Others. There are total 21 scenarios, where each json file is connected with one scenario with total of 193 questions. 
 
 # Dataset Structure
 
