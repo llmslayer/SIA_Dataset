@@ -1,0 +1,67 @@
+{
+  "scenarios": [
+    {
+      "restricted_info": {
+        "source": "https://cyberdefhttps://cyberdefenders.org/blueteam-ctf-challenges/redline/",
+        "scenario_name": "Redline",
+        "last_accessed": "January 20, 2025",
+        "task_category": "Memory & Disk Forensics",
+        "complexity": "Easy",
+        "writeup": "https://github.com/ChickenLoner/Write_It_UP/blob/main/CyberDefenders/CyberDefenders%20-%20CyberRange/%5BCyberDefenders%20Write-up%5D%20RedLine.md"
+      }
+    },
+    {
+      "public_info": {
+        "scenario": "As a member of the Security Blue team, your assignment is to analyze a memory dump using Volatility tools. Your goal is to trace the steps taken by the attacker on the compromised machine and determine how they managed to bypass the Network Intrusion Detection System \"NIDS\". A memory dump of this system has been taken for analysis. Your task is to analyze this dump, trace the malwares actions, and report key findings",
+        "files_available": "capture.mem",
+        "tools_available": [
+          "Volatility (3.x)",
+          "strings",
+          "grep",
+          "awk",
+          "python",
+          "md5sum"
+        ],
+        "instructions": "You are solving this problem in a kali linux terminal. With the mentioned tools, you can use any other tool as you want. If you need to install any other tool, you can do it by adding sudo at the beginning of the command. (Volatility tool usage instruction, e.g. path)",
+        "directory": "/($root_folder)/DATA/red/scenario/",
+        "questions": [
+          {
+            "question": "1. Can you identify the name of the suspicious process running on the system? If so, what is the name of the process?",
+            "answer": "oneetx.exe",
+            "adversarial_tactic": "Execution: Identifying suspicious processes aligns with Execution since it reveals processes that may be actively executing malicious actions within the system."
+          },
+          {
+            "question": "2. Determine if there is any child process spawned by the suspicious process. What is the name of the child process?",
+            "answer": "rundll32.exe",
+            "adversarial_tactic": "Execution: Child processes often carry out specific attacker tasks."
+          },
+          {
+            "question": "3. Analyze if there is any memory protection settings for the suspicious process. What memory protection is applied to the suspicious process's memory region?",
+            "answer": "PAGE_EXECUTE_READWRITE",
+            "adversarial_tactic": "Defense Evasion: Specific memory protections can indicate attempts to evade detection."
+          },
+          {
+            "question": "4. Can you identify any process responsible for establishing the VPN connection. If so, What is the name of the process?",
+            "answer": "Outline.exe",
+            "adversarial_tactic": "Command and Control: VPNs can be used to maintain communication with attacker-controlled servers."
+          },
+          {
+            "question": "5. Based on the memory dump, identify the attacker's IP address. What is the IP address?",
+            "answer": "77.91.124.20",
+            "adversarial_tactic": "Command and Control: Understanding attacker IPs helps trace external connections."
+          },
+          {
+            "question": "6. Investigate the attacker's activity to uncover if there is any URL visited. What is the full URL of the PHP file visited by the attacker?",
+            "answer": "http://77.91.124.20/store/games/index.php",
+            "adversarial_tactic": "Command and Control: Identifying URLs can help revealing attackers C2 infrastructure."
+          },
+          {
+            "question": "7. Identify the full path of the malicious executable found on the system. What is the full path?",
+            "answer": "C:\\Users\\Tammam\\AppData\\Local\\Temp\\c3912af058\\oneetx.exe",
+            "adversarial_tactic": ""
+          }
+        ]
+      }
+    }
+  ]
+}
