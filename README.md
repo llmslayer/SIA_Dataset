@@ -10,7 +10,8 @@ We evaluate different LLMs with our dataset using [🤖 SIA Agent](Agent/agent.m
 
 ## 🔔 What's New?
 
-🔹 **New Model Evaluation Added:** Claude-3.5! 
+🔹 **New Model Evaluation Added:** Claude-3.5!
+
 🔹 **Upcoming Reasoning Models:** DeepSeek-R1 & OpenAI o3-mini  
  
 Stay updated as we continue expanding and refining our dataset and evaluation! ✨
